@@ -39,17 +39,3 @@ if __name__ == '__main__':
     TOKEN = '7333214196:AAH6Qh31JIoXGcJAaG4ji8BvUzNBywsUywE'
     # создание экземпляра бота через `ApplicationBuilder`
     application = ApplicationBuilder().token(TOKEN).build()
-
-    # создаем новый обработчик для функции `caps()`
-    caps_handler = CommandHandler('caps', caps)
-    # здесь регистрируются созданные обработчики
-    application.add_handler(start_handler)
-    application.add_handler(echo_handler)
-    # вот регистрация для функции `caps()`
-    application.add_handler(caps_handler)
-    # создаем обработчик для функции `inline_caps()`
-    inline_caps_handler = InlineQueryHandler(inline_caps)
-    # регистрируем обработчик
-    application.add_handler(inline_caps_handler)
-    # запускаем приложение
-    application.run_polling()
